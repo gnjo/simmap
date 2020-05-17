@@ -5,7 +5,7 @@ simulation
 demo
 https://codepen.io/gnjo/pen/gOaBBQq?editors=1010
 ```
-//simmap(x,y,whitelist,data,mask,di)
+//simmap(x,y,move,whitelist,data,mask,di)
 let fn={}
 fn.q=(s,doc=document)=>{return doc.querySelector(s)}
 fn.str2map=(str)=>{return str.trim().split('\n').map(d=>d.split(''))}
@@ -26,7 +26,7 @@ let data=fn.str2map(`
 ■■■■■■■■■■
 `)
 let whitelist='　＠'.split('')
-let mask=simmap(4,4,whitelist,data)
+let mask=simmap(4,4,5,whitelist,data)
 console.log(mask)
 //
 ```

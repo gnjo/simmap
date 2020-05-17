@@ -33,12 +33,12 @@ function simmap(x,y,mv,list,data,mask,di){
 // de.x++;
  ;
  if(!mask) mask={},mv=mv+1
- if((y < 0 || x < 0|| y > data.length-1 || x > data[0].length-1))return;//out of range
+ if((y < 0 || x < 0|| y > data.length-1 || x > data[0].length-1))return [];//out of range
  ;
  let key=x+'_'+y,oldmv=(mask[key])?mask[key][2]:0 
  ,down=(list.filter(d=>d===data[y][x]).pop() === void 0)?99:1 //ウェイト
- if(mv-down<0)return;// 歩数がマイナスで思考中断 
- if(oldmv>mv)return;//以前より歩数がかかる場合は思考中断　百分の一程度削減
+ if(mv-down<0)return [];// 歩数がマイナスで思考中断 
+ if(oldmv>mv)return [];//以前より歩数がかかる場合は思考中断　百分の一程度削減
  ;
  mask[key]=[x,y,mv];// マーク
  ;

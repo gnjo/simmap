@@ -48,5 +48,5 @@ function simmap(x,y,mv,list,data,mask,di){
  if(di!=1)simmap(x,y+1,mv-down,list,data,mask,3);
  if(di!=2)simmap(x-1,y,mv-down,list,data,mask,4);
  ;
- return Object.keys(mask).map(key=>mask[key]);
+ return Object.keys(mask).map(key=>mask[key])||[] //bugfix
 }
